@@ -30,6 +30,10 @@ public class Customer {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -52,6 +56,12 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void update(Customer customer){
+        this.firstName = customer.firstName;
+        this.lastName = customer.lastName;
+        this.email = customer.email;
     }
 
     @Override

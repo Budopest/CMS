@@ -41,6 +41,9 @@
                 <td>${customer.firstName}</td>
                 <td>${customer.lastName}</td>
                 <td>${customer.email}</td>
+                <td><a href="${pageContext.request.contextPath}/customers/update?customerid=${customer.id}">update</a>
+                    <a href="${pageContext.request.contextPath}/customers/delete?customerid=${customer.id}">delete</a></td>
+
             </tr>
             </c:forEach>
         </table>
