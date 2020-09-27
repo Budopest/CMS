@@ -3,6 +3,7 @@ package customer.management.system.web;
 import customer.management.system.dao.CustomerDaoInterface;
 import customer.management.system.entity.Customer;
 import customer.management.system.service.CustomerService;
+import customer.management.system.service.CustomerServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,7 @@ public class CustomerController {
 
     @Autowired
     @Qualifier(value = "CustomerService")
-    CustomerService customerService;
+    CustomerServiceInterface customerService;
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     // @GetMapping("/list") same as the used annotation with the attribute

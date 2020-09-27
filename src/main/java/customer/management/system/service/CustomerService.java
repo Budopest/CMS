@@ -18,7 +18,7 @@ public class CustomerService implements CustomerServiceInterface  {
 
 
     @Override
-    @Transactional
+    @Transactional //define beginning and end of transactional implicitly
     public List<Customer> getCustomers() {
         return  customerDao.getCustomers();
     }
