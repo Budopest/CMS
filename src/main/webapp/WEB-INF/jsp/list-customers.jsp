@@ -23,7 +23,7 @@
 <div id="container">
     <div id="content">
 
-        <input type="button" value="Add New Customer"
+        <input type="button" value="Add Customer"
                onclick="window.location.href='addCustomerForm';return false;"
         class="add-button">
 
