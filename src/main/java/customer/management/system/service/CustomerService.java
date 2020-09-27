@@ -28,4 +28,21 @@ public class CustomerService implements CustomerServiceInterface  {
     public void addCustomer(Customer customer) {
         customerDao.addCustomer(customer);
     }
+
+    @Override
+    @Transactional
+    public Customer getCustomer(int id) {
+        return customerDao.getCustomer(id);
+    }
+    @Override
+    @Transactional
+    public void updateCustomer(Customer customer) {
+        customerDao.updateCustomer(customer);
+    }
+
+    @Override
+    @Transactional
+    public void deleteCustomer(int id) {
+        customerDao.deleteCustomer(id);
+    }
 }
