@@ -24,4 +24,10 @@ public class HibernateCustomerDao implements CustomerDaoInterface {
         Query<Customer> query = currentSession.createQuery("from Customer",Customer.class);
         return query.getResultList();
     }
+
+    @Override
+    public void addCustomer(Customer newCustomer) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        currentSession.save(newCustomer);
+    }
 }

@@ -22,4 +22,10 @@ public class CustomerService implements CustomerServiceInterface  {
     public List<Customer> getCustomers() {
         return  customerDao.getCustomers();
     }
+
+    @Override
+    @Transactional
+    public void addCustomer(Customer customer) {
+        customerDao.addCustomer(customer);
+    }
 }
