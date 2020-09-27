@@ -1,11 +1,4 @@
-<html>
-<body>
-<h2>Hello World!</h2>
-<br>
-<a href="/servlethome">Servlet home</a>
-<br>
-<a href="/spring/home">Spring home</a>
-<a href="/jdbc/test">connect to db</a>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:redirect url="/customers/list"/>
 
-</body>
-</html>
