@@ -17,7 +17,7 @@ public class HibernateCustomerDao implements CustomerDaoInterface {
     private SessionFactory sessionFactory;
 
     @Override
-    @Transactional
+    //@Transactional moved to the service layer methods
     public List<Customer> getCustomers() {
         Session currentSession = sessionFactory.getCurrentSession();
 
