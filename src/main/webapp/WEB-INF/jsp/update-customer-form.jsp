@@ -29,12 +29,13 @@
         <%--@elvariable id="customer" type="customer"--%>
         <form:form action="updateCustomerForm" modelAttribute="customer" method="post">
 
+            <form:hidden path="id"/>
             <table>
                 <tbody>
-                <tr>
+ <%--               <tr>
                     <td><label>ID:</label></td>
                     <td><form:input path="id" readonly="true"/></td>
-                </tr>
+                </tr>--%>
                 <tr>
                     <td><label>First Name:</label></td>
                     <td><form:input path="firstName"/></td>
