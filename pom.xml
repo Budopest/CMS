@@ -49,6 +49,7 @@
       <c3p0.version>0.9.5.2</c3p0.version>
       <lombok.version>1.18.0</lombok.version>
       <el.version>2.2.5</el.version>
+      <aspectj.version>1.9.6</aspectj.version>
   </properties>
 
   <dependencies>
@@ -96,17 +97,8 @@
           <artifactId>slf4j-log4j12</artifactId>
           <version>${slf4j.version}</version>
       </dependency>
-      <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>jstl</artifactId>
-          <version>1.2</version>
-      </dependency>
-      <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>javax.servlet-api</artifactId>
-          <version>3.0.1</version>
-          <scope>provided</scope>
-      </dependency>
+
+
       <dependency>
           <groupId>org.springframework</groupId>
           <artifactId>spring-core</artifactId>
@@ -140,6 +132,29 @@
           <artifactId>spring-orm</artifactId>
           <version>${spring.version}</version>
       </dependency>
+
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aop</artifactId>
+          <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjrt</artifactId>
+          <version>${aspectj.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>aopalliance</groupId>
+          <artifactId>aopalliance</artifactId>
+          <version>1.0</version>
+      </dependency>
+      <dependency>
+          <groupId>org.aspectj</groupId>
+          <artifactId>aspectjweaver</artifactId>
+          <version>${aspectj.version}</version>
+      </dependency>
+
       <dependency>
           <groupId>mysql</groupId>
           <artifactId>mysql-connector-java</artifactId>

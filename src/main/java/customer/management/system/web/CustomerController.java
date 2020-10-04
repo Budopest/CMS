@@ -11,10 +11,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 @Controller
 @RequestMapping("/customers")
 public class CustomerController {
+
+    //private Logger logger = Logger.getLogger(getClass().getName());
+
 
     @Autowired
     @Qualifier(value = "CustomerService")

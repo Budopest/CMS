@@ -12,6 +12,7 @@ import java.util.List;
 @Service(value = "CustomerService")
 public class CustomerService implements CustomerServiceInterface  {
 
+
     @Autowired
     @Qualifier(value = "HibernateCustomerDao")
     CustomerDaoInterface customerDao;
