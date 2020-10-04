@@ -1,7 +1,6 @@
 package customer.management.system.web;
 
 import customer.management.system.dao.CustomerDaoInterface;
-import customer.management.system.domain.Email;
 import customer.management.system.entity.Customer;
 import customer.management.system.service.CustomerService;
 import customer.management.system.service.CustomerServiceInterface;
