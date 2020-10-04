@@ -1,6 +1,7 @@
 package customer.management.system.web;
 
 import customer.management.system.dao.CustomerDaoInterface;
+import customer.management.system.domain.Email;
 import customer.management.system.entity.Customer;
 import customer.management.system.service.CustomerService;
 import customer.management.system.service.CustomerServiceInterface;
@@ -8,8 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -27,21 +31,21 @@ public class CustomerController {
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     // @GetMapping("/list") same as the used annotation with the attribute
     public String listCustomers(Model customerModel){
-
         List<Customer> customers = customerService.getCustomers();
         customerModel.addAttribute("customers",customers);
         return "list-customers";
     }
     @GetMapping("addCustomerForm")
     public String showAddCustomerForm(Model newCustomerModel){
-
         Customer newCustomer = new Customer();
         newCustomerModel.addAttribute("newCustomer",newCustomer);
         return "add-customer-form";
     }
     @PostMapping("addCustomerForm")
-    public String saveCustomer(@ModelAttribute("newCustomer")Customer customer){
+    public String saveCustomer(@Valid @ModelAttribute("newCustomer")Customer customer, BindingResult bindingResult){
 
+        System.out.println("errors: " + bindingResult.getAllErrors());
+        if(bindingResult.hasErrors()) return "add-customer-form";
         customerService.addCustomer(customer);
         return "redirect:/customers/list";
     }
@@ -54,8 +58,8 @@ public class CustomerController {
         return "update-customer-form";
     }
     @RequestMapping(value = "/updateCustomerForm",method = RequestMethod.POST)
-    public String saveUpdatedCustomer(@ModelAttribute("customer") Customer customer)
-    {
+    public String saveUpdatedCustomer(@Valid @ModelAttribute("customer") Customer customer,BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) return "update-customer-form";
         //System.out.println("after modifications: "+customer);
         customerService.updateCustomer(customer);
         return "redirect:/customers/list";
@@ -67,4 +71,5 @@ public class CustomerController {
         customerService.deleteCustomer(id);
         return "redirect:/customers/list";
     }
+
 }

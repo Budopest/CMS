@@ -1,6 +1,10 @@
 package customer.management.system.entity;
 
+import org.hibernate.validator.constraints.Email;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "customer")
@@ -11,10 +15,16 @@ public class Customer {
     @Column(name = "id")
     private int id;
     @Column(name = "first_name")
+    @NotNull(message = "Cannot be empty")
+    @Size(min = 1,message = "You must enter first name")
     private String firstName;
     @Column(name = "last_name")
+    @NotNull(message = "Cannot be empty")
+    @Size(min = 1,message = "You must enter first name")
     private String lastName;
     @Column(name = "email")
+    @Email(message = "Enter a valid email address")
+    @Size(min = 10, max = 25,message = "email size should be between 10 and 25 charachters")
     private String email;
 
     public Customer() {

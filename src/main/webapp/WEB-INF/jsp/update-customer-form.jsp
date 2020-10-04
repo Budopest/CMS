@@ -39,14 +39,19 @@
                 <tr>
                     <td><label>First Name:</label></td>
                     <td><form:input path="firstName"/></td>
+                    <td><form:errors path="firstName"/></td>
+
                 </tr>
                 <tr>
                     <td><label>Last Name:</label></td>
                     <td><form:input path="lastName"/></td>
+                    <td><form:errors path="lastName"/></td>
+
                 </tr>
                 <tr>
                     <td><label>email:</label></td>
                     <td><form:input path="email"/></td>
+                    <td><form:errors path="email"/></td>
                 </tr>
                 <tr>
                     <td><label></label></td>
