@@ -50,6 +50,7 @@
       <lombok.version>1.18.0</lombok.version>
       <el.version>2.2.5</el.version>
       <aspectj.version>1.9.6</aspectj.version>
+      <springsecurity.version>5.0.0.RELEASE</springsecurity.version>
   </properties>
 
   <dependencies>
@@ -70,6 +71,12 @@
           <groupId>javax.servlet</groupId>
           <artifactId>jstl</artifactId>
           <version>1.2</version>
+      </dependency>
+      <dependency>
+          <groupId>javax.servlet.jsp</groupId>
+          <artifactId>javax.servlet.jsp-api</artifactId>
+          <version>2.3.1</version>
+          <scope>provided</scope>
       </dependency>
 
       <dependency>
@@ -196,6 +203,25 @@
           <groupId>javax.validation</groupId>
           <artifactId>validation-api</artifactId>
          <version>2.0.1.Final</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-web</artifactId>
+          <version>${springsecurity.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-config</artifactId>
+          <version>${springsecurity.version}</version>
+      </dependency>
+
+      <!-- Add Spring Security Taglibs support -->
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-taglibs</artifactId>
+          <version>${springsecurity.version}</version>
       </dependency>
 
   </dependencies>

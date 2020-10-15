@@ -18,13 +18,16 @@
     <context:component-scan
             base-package="customer.management.system.entity, customer.management.system.dao, customer.management.system.service, customer.management.system.aspect" />
 
+    <context:property-placeholder location="classpath:persistence-mysql.properties"/>
+
+    <bean class="customer.management.system.config.DemoSecurityConfig"/>
 
     <bean id="dataSource"
           class="org.apache.tomcat.dbcp.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/web_customer_tracker"/>
-        <property name="username" value="lrngsql"/>
-        <property name="password" value="budopest513@W"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.user}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
 
     <!-- Step 1: Define Database DataSource / connection pool -->
@@ -36,10 +39,10 @@
         <property name="password" value="budopest513@W" />
 
         <!-- these are connection pool properties for C3P0 -->
-        <property name="initialPoolSize" value="5"/>
-        <property name="minPoolSize" value="5" />
-        <property name="maxPoolSize" value="20" />
-        <property name="maxIdleTime" value="30000" />
+        <property name="initialPoolSize" value="${connection.pool.initialPoolSize}"/>
+        <property name="minPoolSize" value="${connection.pool.minPoolSize}" />
+        <property name="maxPoolSize" value="${connection.pool.maxPoolSize}" />
+        <property name="maxIdleTime" value="${connection.pool.maxIdleTime}" />
     </bean>
 
     <!-- Step 2: Setup Hibernate session factory -->
