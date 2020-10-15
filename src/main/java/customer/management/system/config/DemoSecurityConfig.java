@@ -37,8 +37,8 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-            .anyRequest()
-            .authenticated()
+            .antMatchers("/customers/list").hasRole("EMPLOYEE")
+            .antMatchers("/customers/update","customers/delete","customers/addCustomerForm","customers/updateCustomerForm").hasRole("ADMIN")
 			.and()
 			.formLogin()
 				.loginPage("/showMyLoginPage")
