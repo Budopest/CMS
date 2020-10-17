@@ -41,7 +41,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/customers/update","customers/delete","customers/addCustomerForm","customers/updateCustomerForm").hasRole("ADMIN")
 			.and()
 			.formLogin()
-				.loginPage("/showMyLoginPage")
+				.loginPage("/LoginPage")
 				.loginProcessingUrl("/authenticateTheUser")
 				.permitAll()
 			.and()
