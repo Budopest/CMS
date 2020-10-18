@@ -9,9 +9,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <html>
 <head>
-    <title>Customers list</title>
+    <title><spring:message code="customers.list.title"/></title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
@@ -66,11 +67,25 @@
            method="POST">
 
     <input type="submit" value="Logout" />
-
 </form:form>
 
 
+<br>
+<table align="left" style="padding-left: 300px;">
+    <tr>
+        <td>
+            <b>Language:</b>
+            <a
+                    href="${pageContext.request.contextPath}/customers/list?lang=en_US">English(US)</a>
+            |
+            <a
+                    href="${pageContext.request.contextPath}/customers/list?lang=ar_EG">Arabic(EG)</a>
 
+            <br> <b>Locale:</b>
+            <c:out value="${currentLocale}" />
+        </td>
+    </tr>
+</table>
 
 
 

@@ -6,6 +6,7 @@ import customer.management.system.service.CustomerService;
 import customer.management.system.service.CustomerServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,9 +30,10 @@ public class CustomerController {
 
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     // @GetMapping("/list") same as the used annotation with the attribute
-    public String listCustomers(Model customerModel){
+    public String listCustomers(Model customerModel,Model localeModel){
         List<Customer> customers = customerService.getCustomers();
         customerModel.addAttribute("customers",customers);
+        localeModel.addAttribute("currentLocale", LocaleContextHolder.getLocale());
         return "list-customers";
     }
     @GetMapping("addCustomerForm")
