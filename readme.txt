@@ -15,7 +15,7 @@ the project uses Spring, Spring MVC, Spring AOP, Spring Security, Hibernate and 
 I try to write clean code and follow best practices as I am still learning and I am refactoring the code whenever i learn new things or find a better or cleaner way to do the job.
 
 TODO spring
-    add localization and internationalization support.
+    replace hardcoded messages with ones from the resources
 
 TODO webpages
     improve the look of the webpages.
